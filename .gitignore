@@ -1,0 +1,78 @@
+# -------------------------
+# Node
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# -------------------------
+# Logs
+# -------------------------
+logs/
+logs/*.log
+*.log
+
+# -------------------------
+# Build / Output
+# -------------------------
+dist/
+build/
+client/dist/
+client/build/
+
+# -------------------------
+# Temporary / Cache
+# -------------------------
+tmp/
+temp/
+.cache/
+.scraper-cache/
+.pnpm-store/
+
+# -------------------------
+# OS files
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# IDE / Editor
+# -------------------------
+.vscode/
+.idea/
+
+# -------------------------
+# Puppeteer (if using)
+# -------------------------
+.puppeteer/
+chrome-data/
+
+# -------------------------
+# Docker
+# -------------------------
+# Ignore local Docker build artifacts
+docker-compose.override.yml
+docker-data/
+docker-cache/
+*.tar
+
+# Containers + volumes (generated locally)
+**/data/
+**/volumes/
+
+# If building images locally
+*.pid
+
+# -------------------------
+# Misc
+# -------------------------
+*.swp
+*.swo
+*.bak

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>PriceComp - Find Best Deals</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-search-dollar"></i>
+                <h1>PriceComp</h1>
+            </div>
+    
+            <!-- Hamburger Menu (Mobile) -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <nav id="nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="how-it-works.html">How it Works</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Find the Best Prices Across Multiple Stores</h2>
+            <p>Compare prices instantly and save money on your favorite products</p>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="searchInput"
+                    placeholder="Search for a product (e.g., Samsung S23, iPhone 15, Sony Headphones...)">
+                <button id="searchBtn">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+        <!-- Results Section -->
+        <section class="results-section" id="resultsSection" style="display: none;">
+            <div class="container">
+        
+                <!-- NEW: Category Filter Bar -->
+                <div class="category-bar">
+                    <!-- "All" button usually keeps text because there is no good icon for "All" -->
+                    <button class="cat-btn active" onclick="filterByCategory('all')">All</button>
+                
+                    <button class="cat-btn" onclick="filterByCategory('mobile')">
+                        <span>📱</span> <span class="btn-text">Phones</span>
+                    </button>
+                
+                    <button class="cat-btn" onclick="filterByCategory('laptop')">
+                        <span>💻</span> <span class="btn-text">Laptops</span>
+                    </button>
+                
+                    <button class="cat-btn" onclick="filterByCategory('clothing')">
+                        <span>👕</span> <span class="btn-text">Clothes</span>
+                    </button>
+                
+                    <button class="cat-btn" onclick="filterByCategory('shoes')">
+                        <span>👟</span> <span class="btn-text">Shoes</span>
+                    </button>
+                
+                    <button class="cat-btn" onclick="filterByCategory('watch')">
+                        <span>⌚</span> <span class="btn-text">Watches</span>
+                    </button>
+                </div>
+                <!-- End New Section -->
+        
+                <div class="results-header">
+                    <h3 id="productTitle">Results for: <span id="searchedProduct"></span></h3>
+                <p id="resultsCount"></p>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Searching for best prices...</p>
+            </div>
+
+            <!-- Price Comparison Cards -->
+            <div class="price-grid" id="priceGrid"></div>
+
+            <!-- Best Deal Banner -->
+            <div id="bestDealBanner" class="best-deal-banner" style="display: none;">
+                <i class="fas fa-trophy"></i>
+                <span id="bestDealText"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <i class="fas fa-robot"></i>
+                <span>AI Assistant</span>
+            </div>
+            <button id="toggleChat" class="toggle-chat">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+
+        <div class="chatbot-body" id="chatbotBody">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <i class="fas fa-robot"></i>
+                    <div class="message-content">
+                        <p>Hi! I'm your shopping assistant. Search for a product and I'll help you with any questions!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Ask me anything about the product..." disabled>
+            <button id="sendBtn" disabled>
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chatbot Toggle Button (Mobile) -->
+    <button class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PriceComp. All rights reserved. | Find the best deals, save money!</p>
+            <div class="social-links">
+                <a href="https://github.com/Virajm25" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:virajm1714@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/viraj-mehrotra/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>  
+        </div>
+    </footer>
+    <script src="js/categories.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
